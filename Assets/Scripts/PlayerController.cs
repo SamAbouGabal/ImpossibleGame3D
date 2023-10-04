@@ -14,6 +14,13 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        Input isKeyWasJustPressed = Input.GetKeyDown(KeyCode.Space);
+        if (...)
+        {
+            
+        }
+        Rigidbody rb = GetComponent<Rigidbody>();
+        
         transform.Translate(0, 0, speed);
     }
 }
