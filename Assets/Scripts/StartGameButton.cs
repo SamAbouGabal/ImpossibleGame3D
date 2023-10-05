@@ -1,8 +1,14 @@
+using System;
 using UnityEngine;
 
 
 public class StartGameButton : MonoBehaviour
 {
+    private void FixedUpdate()
+    {
+        transform.Rotate(1, 1,1 );
+    }
+
     public void HoverStart()
     {
         transform.localScale = Vector3.one * 1.1f;
