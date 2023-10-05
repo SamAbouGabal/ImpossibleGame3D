@@ -13,13 +13,11 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        transform.Translate(0, 0, speed);
-        bool whenKeyIsPressed = Input.GetKeyDown(KeyCode.Space);
-        if (whenKeyIsPressed)
+        if (Input.GetButtonDown("Jump"))
         {
-            Rigidbody rigidBody = GetComponent<Rigidbody>();
+            Rigidbody rigidBody = gameObject.GetComponent<Rigidbody>();
             rigidBody.AddForce(0, 300, 0);
         }
-        
+        transform.Translate(0, 0, speed);
     }
 }
