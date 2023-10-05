@@ -1,5 +1,5 @@
-using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class StartGameButton : MonoBehaviour
@@ -35,6 +35,6 @@ public class StartGameButton : MonoBehaviour
 
     public void Click()
     {
-        
+        SceneManager.LoadScene("GameScene");
     }
 }
