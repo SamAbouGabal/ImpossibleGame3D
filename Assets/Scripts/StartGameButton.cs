@@ -15,12 +15,16 @@ public class StartGameButton : MonoBehaviour
     
     public void ClickStart()
     {
-        
+        MeshRenderer mr = GetComponent<MeshRenderer>();
+        mr.material.color = Color.gray;
+        mr.material.SetColor("EmissionColor", Color.green);
     }
 
     public void ClickEnd()
     {
-        
+        MeshRenderer mr = GetComponent<MeshRenderer>();
+        mr.material.color = Color.white;
+        mr.material.SetColor("EmissionColor", Color.green);
     }
 
     public void Click()
