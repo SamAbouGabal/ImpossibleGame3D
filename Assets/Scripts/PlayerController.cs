@@ -14,11 +14,17 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         float jumpForce = 200;
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && isTouchingGround())
         {
             Rigidbody rigidBody = gameObject.GetComponent<Rigidbody>();
             rigidBody.AddForce(0, jumpForce, 0);
         }
         transform.Translate(0, 0, speed);
+    }
+
+    bool isTouchingGround()
+    {
+        int layerMask = LayerMask.NameToLayer("Ground");
+        return Physics.CheckBox(transform.position, transform.lossyScale / 1.99f, transform.rotation, layerMask);
     }
 }
