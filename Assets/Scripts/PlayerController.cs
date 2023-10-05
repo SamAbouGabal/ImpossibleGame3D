@@ -13,10 +13,11 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        float jumpForce = 200;
         if (Input.GetButtonDown("Jump"))
         {
             Rigidbody rigidBody = gameObject.GetComponent<Rigidbody>();
-            rigidBody.AddForce(0, 300, 0);
+            rigidBody.AddForce(0, jumpForce, 0);
         }
         transform.Translate(0, 0, speed);
     }
