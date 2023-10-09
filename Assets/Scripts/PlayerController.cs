@@ -10,11 +10,14 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         float jumpForce = 200;
-        if (Input.GetButtonDown("Jump") && isTouchingGround())
+        float cubeSpin = 2;
+        if (Input.GetButton("Jump") && isTouchingGround())
         {
             Rigidbody rigidBody = gameObject.GetComponent<Rigidbody>();
-            rigidBody.AddForce(0, jumpForce, 0);
-            rigidBody.angularVelocity = new Vector3(2, 0, 0);
+            Vector3 velocity = rigidBody.velocity;
+            velocity.y = jumpForce;
+            rigidBody.velocity = velocity;
+            rigidBody.angularVelocity = new Vector3(cubeSpin, 0, 0);
         }
 
     }
