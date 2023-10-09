@@ -4,12 +4,6 @@ public class PlayerController : MonoBehaviour
 {
     public float speed = 0.04f; //Field
     
-    
-    
-    void Start()
-    {
-        
-    }
 
     void Update()
     {
