@@ -1,11 +1,13 @@
+using System;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
     public float speed = 0.04f; //Field
     
-
-    void Update()
+    
+    
+    private void Update()
     {
         float jumpForce = 200;
         if (Input.GetButtonDown("Jump") && isTouchingGround())
@@ -14,7 +16,13 @@ public class PlayerController : MonoBehaviour
             rigidBody.AddForce(0, jumpForce, 0);
             rigidBody.angularVelocity = new Vector3(2, 0, 0);
         }
-        transform.Translate(0, 0, speed, Space.World);
+
+    }
+
+    private void FixedUpdate()
+    {
+        Rigidbody rigidbody = gameObject.GetComponent<Rigidbody>();
+        rigidbody.velocity = new Vector3(rigidbody.velocity.x, rigidbody.velocity.y, speed);
     }
 
     bool isTouchingGround()
