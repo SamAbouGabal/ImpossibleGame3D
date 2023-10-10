@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     
     
     
-    private void Update()
+    public void Update()
     {
         float jumpForce = 200;
         float cubeSpin = 2;
