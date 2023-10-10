@@ -6,11 +6,11 @@ public class PlayerController : MonoBehaviour
     public float speed = 0.04f; //Field
     
     
+        public float jumpForce = 7;
+        public float cubeSpin = 2;
     
     public void Update()
     {
-        float jumpForce = 200;
-        float cubeSpin = 2;
         if (Input.GetButton("Jump") && isTouchingGround())
         {
             Rigidbody rigidBody = gameObject.GetComponent<Rigidbody>();
