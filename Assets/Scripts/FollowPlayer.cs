@@ -12,7 +12,7 @@ using UnityEngine;
             {
                 return;
             }
-            Vector3 target = player.transform.position + new Vector3(0, 1.4f, -5f);
+            Vector3 target = player.transform.position + new Vector3(0f, 1.4f, 31f);
             transform.position = target;
         }
     }
